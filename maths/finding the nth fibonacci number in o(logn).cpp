@@ -1,3 +1,4 @@
+// calculate the nth fibonacci number using matrix exponantial method
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -16,56 +17,12 @@ typedef long long ll;
 typedef unsigned long long ull;
 typedef unsigned long long int ulli;
 
-/*int prefix[MAX];
-ll sieve_size;
-bitset<10000010>bs;
-vll p;
-void sieve(ll upperbound) {
-    sieve_size = upperbound + 1;
-    bs.set();
-    bs[0] = bs[1] = false;
-    for (ll i = 2; i < sieve_size; i++) {
-        if (bs[i]) {
-            for (ll j = i * i; j < sieve_size; j += i) bs[j] = false;
-            p.push_back(i);
-        }
-    }
-    prefix[0] = prefix[1] = 0;
-    for (int p = 2; p <= MAX; p++) {
-        prefix[p] = prefix[p - 1];
-        if (bs[p])
-            prefix[p]++;
-    }
-}*/
-
-ll gcd(ll a, ll b) { return b == 0 ? a : gcd(b, a % b); }
-ll lcm(ll a, ll b) { return a * b / gcd(a, b); }
-
-
-bool isPrime(ll n) {
-    // Corner cases
-    if (n <= 1)  return false;
-    if (n <= 3)  return true;
-
-    // This is checked so that we can skip
-    // middle five numbers in below loop
-    if (n%2 == 0 || n%3 == 0) return false;
-
-    for (int i=5; i*i<=n; i=i+6)
-        if (n%i == 0 || n%(i+2) == 0)
-            return false;
-
-    return true;
-}
-
 void Fib(int n){
     int prev[] = {0, 1};
     for(int i = 2; i<=n; i++){
         prev[i&1] += prev[(i-1)&1];
     }
 }
-
-
 
 void multiply(ll F[2][2], ll M[2][2])
 {
