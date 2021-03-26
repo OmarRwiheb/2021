@@ -14,17 +14,17 @@ int main(){
   using a simple for loop and if the number is divisible by a or b
   we add it to the sum and the time complexity is O(n)*/
   int a = 3, b = 5;
-  int sum = 0;
+  int sum1 = 0;
   for(int i = 0; i < target; i++)
     if(i % a == 0 || i % b == 0)
-      sum += i;
+      sum1 += i;
   
   /*instead we can calculate the sum in time complexity O(1) using
   inclusion-execlusion principle so we add the sum of the multiplies of a
   and sum of the multiplies of b and substart multiplies of a * b */
   
   int a = 3, b = 5;
-  ull sum = sumOfMultiplies(a) + sumOfMultiplies(b) - sumOfMultiplies(a * b);
+  ull sum2 = sumOfMultiplies(a) + sumOfMultiplies(b) - sumOfMultiplies(a * b);
   
   
   return 0;  
