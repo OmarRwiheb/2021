@@ -1,3 +1,11 @@
+/* some useful facts:
+= 1 is not prime
+= all primes except 2 are odd
+= all primes greater than 3 can be written in the form 6k+/-1
+= any number n can have only one primefactor greater than sqrt(n)
+= the consequence for primality testing of a number n is: if we cannot find a number f less 
+than or equal sqrt(n) that divedes n then n is prime */
+
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -14,6 +22,8 @@ using namespace std;
 typedef long long ll;
 typedef unsigned long long ull;
 typedef unsigned long long int ulli;
+
+
 
 // all prime and factorization function that depending on sieve function
 const int MAX = 1e4;
