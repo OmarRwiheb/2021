@@ -71,7 +71,7 @@ int main() {
         adj[u].push_back(v);
         adj[v].push_back(u);
     }
-    graph_sz = dfs(1);
+    cout << dfs(1);
     return 0;
 
 }
